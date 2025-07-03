@@ -14,6 +14,8 @@ func InitDB(cfg *config.Config) (*gorm.DB, error) {
 		return nil, err
 	}
 	database.AutoMigrate(&Task{})
+	database.AutoMigrate(&Tag{})
+	database.AutoMigrate(&TaskTag{})
 	return database, nil
 }
 
