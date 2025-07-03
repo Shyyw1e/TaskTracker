@@ -25,7 +25,7 @@ func LoadConfig() *Config {
 	if err != nil {
 		log.Println("failed to load .env")
 	}
-	config := &Config{
+	cfg := &Config{
 		DBDriver: 		getenv("DB_DRIVER", "sqlite3"),
 		DBName: 		getenv("DB_NAME", "tasktracker.db"),
 		DBHost: 		getenv("DB_HOST", "localhost"),
@@ -37,6 +37,7 @@ func LoadConfig() *Config {
 		LogLevel:      	getenv("LOG_LEVEL", "debug"),
 	}
 
+	return cfg
 }
 
 func getenv(key, fallback string) string {
