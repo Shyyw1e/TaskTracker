@@ -3,7 +3,7 @@ package db
 import "time"
 
 type Task struct {
-	ID 				uint 			`gorm:"primaryKey" json:"id"`
+	ID 				uint64 			`gorm:"primaryKey" json:"id"`
 	Title			string			`gorm:"title" json:"title"`
 	Description		string			`gorm:"description" json:"description"`
 	UserID			int64			`gorm:"user_id" json:"user_id"`
@@ -14,7 +14,7 @@ type Task struct {
 
 type Tag struct {
 	ID 				uint			`gorm:"primaryKey"`
-	Name			string			`gorm:"unique"`
+	Name			string			`gorm:"uniqueIndex" json:"name"`
 }
 
 type TaskTag struct {
