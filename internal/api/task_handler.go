@@ -49,7 +49,7 @@ func GetAllTasksHandler(w http.ResponseWriter, r *http.Request, database *gorm.D
 	userID, err := strconv.ParseInt(userIDStr, 10, 64)
 	if err != nil {
 		http.Error(w, "invalid userID", http.StatusBadRequest)
-		logger.Log.Errorf("failed to conver userID to int64: %v", err)
+		logger.Log.Errorf("failed to convert userID to int64: %v", err)
 		return
 	}
 	
